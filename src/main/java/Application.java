@@ -11,16 +11,13 @@ public class Application {
         Kotik cat1 = new Kotik();
 
 
-       compareVoice(cat.getVoice(), cat1.getVoice());
+        System.out.println(compareVoice(cat.getVoice(), cat1.getVoice()));
         System.out.println("Всего котиков - " + Kotik.getCount());
         System.out.println(Arrays.toString(cat1.liveAnotherDay()));
     }
 
     private static boolean compareVoice(String voice, String voice1) {
-        return Objects.equals(voice, voice1);
-    }
-
-    private  boolean compareVoice(Kotik voice, Kotik voice1) {
-        return Objects.equals(voice, voice1);
+       if ( voice == voice1) return true;
+       return false;
     }
 }
