@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class Kotik {
 
-    private String name = "Котик1";
-    public String voice = "мяу" ;
+    private String name = "tom";
+    private String voice = "mau" ;
     private int satiety = 1;
     private int weight = 1;
     private static int count = 0;
