@@ -20,7 +20,8 @@ public class Application {
 
 
     public  boolean compareVoice(Kotik voice, Kotik voice1) {
-        if (voice == voice1) {return true;}
-        return false;
+        if (!Objects.equals(voice.getVoice(), voice1.getVoice())) {return false;}
+
+        return true;
     }
 }
