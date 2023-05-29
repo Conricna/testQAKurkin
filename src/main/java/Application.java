@@ -1,5 +1,6 @@
+import animals.Kotik;
+
 import java.util.Arrays;
-import java.util.Map;
 
 public class Application {
     public static void main(String args[]){
