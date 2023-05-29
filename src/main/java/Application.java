@@ -7,7 +7,7 @@ public class Application {
 
     public static void main(String args[]){
 
-        Kotik cat = new Kotik("cali", "miy",1 ,43);
+        Kotik cat = new Kotik("Котик1", "мяу",1 ,1);
         Kotik cat1 = new Kotik();
 
 
@@ -16,8 +16,7 @@ public class Application {
         System.out.println(Arrays.toString(cat1.liveAnotherDay()));
     }
 
-    private static boolean compareVoice(String voice, String voice1) {
-       if ( voice == voice1) return true;
-       return false;
+    public static boolean compareVoice(String voice, String voice1) {
+        return voice == voice1;
     }
 }
