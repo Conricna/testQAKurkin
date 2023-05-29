@@ -1,5 +1,7 @@
 package animals;
 
+import java.util.Objects;
+
 public class Kotik {
 
     private String name = "tom";
@@ -7,7 +9,7 @@ public class Kotik {
     private int satiety = 1;
     private int weight = 1;
     private static int count = 0;
-    static int METHODS = 5;
+    private final int METHODS = 5;
 
     public String getName() {
         return name;
@@ -108,12 +110,12 @@ public class Kotik {
         this.satiety= this.satiety + satiety;
        // System.out.println(foodName + " " + satiety);
     }
-    private String eat () {
+    private void eat () {
         this.satiety++;
         eat(this.satiety);
         eat( this.satiety, "burg");
-        return "ел";
     }
+
 
     public String[] liveAnotherDay(){
         String result = null;
@@ -124,7 +126,9 @@ public class Kotik {
                 case 1:
                     if (play()){
                          result= "играл";
-                    };
+                    }
+                    else
+                        result = "ел";
                     break;
                 case 2:
                     if (wash()){
@@ -147,7 +151,7 @@ public class Kotik {
                     }
                     break;
             }
-            dayCat[i] = "ЧАС: " + i + " " + result;
+            dayCat[i] =  + i + " - " + result;
         }
         return dayCat;
     }
