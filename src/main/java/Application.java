@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Application {
+
     public static void main(String args[]){
 
         Kotik cat = new Kotik("cali", "miy",1 ,43);
@@ -15,7 +16,7 @@ public class Application {
         System.out.println(Arrays.toString(cat1.liveAnotherDay()));
     }
 
-    private boolean compareVoice(Kotik voice, Kotik voice1) {
+    private static boolean compareVoice(Kotik voice, Kotik voice1) {
         return Objects.equals(voice, voice1);
     }
 }

@@ -64,7 +64,6 @@ public class Kotik {
             satiety--;
             return true;
         }
-        eat();
         return false ;
     }
     private boolean sleep () {
@@ -72,7 +71,6 @@ public class Kotik {
             satiety--;
             return true;
         }
-        eat();
         return false ;
     }
     private boolean wash () {
@@ -80,7 +78,6 @@ public class Kotik {
             satiety--;
             return true;
         }
-        eat();
         return false ;
     }
     private boolean walk () {
@@ -88,7 +85,6 @@ public class Kotik {
             satiety--;
             return true;
         }
-        eat();
         return false ;
     }
     private boolean hunt () {
@@ -96,7 +92,6 @@ public class Kotik {
             satiety--;
             return true;
         }
-        eat();
         return false ;
     }
 /**/
@@ -125,27 +120,45 @@ public class Kotik {
                     if (play()){
                          result= "играл";
                     }
-                    else
+                    else {
+                        eat();
                         result = "ел";
+                    }
                     break;
                 case 2:
                     if (wash()){
                         result = "Умывался";
                     }
+                    else {
+                        eat();
+                        result = "ел";
+                    }
                     break;
                 case 3:
                     if (walk()){
                         result = "Гулял";
-                    };
+                    }
+                    else {
+                        eat();
+                        result = "ел";
+                    }
                     break;
                 case 4:
                     if(hunt()){
                         result = "Охотился";
                     }
+                    else {
+                        eat();
+                        result = "ел";
+                    }
                     break;
                 default:
                     if(sleep()){
                         result = "Спал";
+                    }
+                    else {
+                        eat();
+                        result = "ел";
                     }
                     break;
             }
