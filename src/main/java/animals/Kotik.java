@@ -7,7 +7,7 @@ public class Kotik {
     private int satiety = 1;
     private int weight = 1;
     private static int count = 0;
-    private final  int METHODS = 5;
+    static int METHODS = 5;
 
     public String getName() {
         return name;
@@ -57,42 +57,47 @@ public class Kotik {
         count++;
     }
 
-    private String play() {
+    private boolean play() {
         if(satiety == 0 ){
             //System.out.println("Котик очень голоден, показатель сытости - " + satiety);
-            return  eat() ;
+            eat();
+            return false;
         }
         weight=weight-2;
         satiety--;
-        return "играл";
+        return true ;
     }
-    private String sleep () {
+    private boolean sleep () {
         if(satiety == 0 ){
             //System.out.println("Котик очень голоден, показатель сытости - " + satiety);
-            return  eat() ;
+            eat();
+            return false ;
         }
-        return "Спал";
+        return true;
     }
-    private String wash () {
+    private boolean wash () {
         if(satiety == 0 ){
             //System.out.println("Котик очень голоден, показатель сытости - " + satiety);
-            return  eat() ;
+            eat();
+            return false ;
         }
-        return "Умывался";
+        return true;
     }
-    private String walk () {
+    private boolean walk () {
         if(satiety == 0 ){
             //System.out.println("Котик очень голоден, показатель сытости - " + satiety);
-            return  eat() ;
+            eat();
+            return  false ;
         }
-        return "Гулял";
+        return true;
     }
-    private String hunt () {
+    private boolean hunt () {
         if(satiety == 0 ){
             //System.out.println("Котик очень голоден, показатель сытости - " + satiety);
-            return  eat() ;
+            eat();
+            return  false ;
         }
-        return "Охотился";
+        return true;
     }
 /**/
     private void eat (int satiety ) {
@@ -111,25 +116,35 @@ public class Kotik {
     }
 
     public String[] liveAnotherDay(){
-        String result;
+        String result = null;
         String[] dayCat = new String[24];
         for (int i=0; i<dayCat.length; i++){
             int qwe = (int) (Math.random()*METHODS);
             switch (qwe) {
                 case 1:
-                    result = play();
+                    if (play()){
+                         result= "играл";
+                    };
                     break;
                 case 2:
-                    result = wash();
+                    if (wash()){
+                        result = "Умывался";
+                    }
                     break;
                 case 3:
-                    result = walk();
+                    if (walk()){
+                        result = "Гулял";
+                    };
                     break;
                 case 4:
-                    result = hunt();
+                    if(hunt()){
+                        result = "Охотился";
+                    }
                     break;
                 default:
-                    result = sleep();
+                    if(sleep()){
+                        result = "Спал";
+                    }
                     break;
             }
             dayCat[i] = "ЧАС: " + i + " " + result;
