@@ -17,6 +17,7 @@ public class Application {
     }
 
     private static boolean compareVoice(String voice, String voice1) {
+        return Objects.equals(voice, voice1);
     }
 
     private  boolean compareVoice(Kotik voice, Kotik voice1) {
