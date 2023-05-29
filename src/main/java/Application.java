@@ -16,7 +16,7 @@ public class Application {
         System.out.println(Arrays.toString(cat1.liveAnotherDay()));
     }
 
-    public  boolean compareVoice(String voice, String voice1) {
+    public  boolean compareVoice(Kotik voice, Kotik voice1) {
         return voice == voice1;
     }
 }
