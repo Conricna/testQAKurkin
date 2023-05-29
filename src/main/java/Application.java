@@ -16,8 +16,11 @@ public class Application {
         System.out.println("Всего котиков - " + Kotik.getCount());
         System.out.println(Arrays.toString(cat1.liveAnotherDay()));
     }
-    public static boolean compareVoice(String voice1, String voice2){
-        if (voice1!=voice2) return false;
-        return true;
+
+    private static boolean compareVoice(String voice, String voice1) {
+        return Objects.equals(voice, voice1);
     }
+
+
+
 }
