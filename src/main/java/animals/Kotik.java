@@ -6,10 +6,10 @@ public class Kotik {
 
     private String name = "tom";
     private String voice = "mau" ;
-    private boolean satiety =  false;
+    private int satiety = 1;
     private int weight = 1;
     private static int count = 0;
-    private final int METHODS = 5;
+    private static final int METHODS = 5;
 
     public String getName() {
         return name;
@@ -27,11 +27,11 @@ public class Kotik {
         this.voice = voice;
     }
 
-    public boolean getSatiety() {
+    public int getSatiety() {
         return satiety;
     }
 
-    public void setSatiety(boolean satiety) {
+    public void setSatiety(int satiety) {
         this.satiety = satiety;
     }
 
@@ -51,7 +51,7 @@ public class Kotik {
         return count;
     }
 
-    public Kotik(String name, String voice, boolean satiety, int weight) {
+    public Kotik(String name, String voice, int satiety, int weight) {
         this.name = name;
         this.voice = voice;
         this.satiety = satiety;
@@ -60,16 +60,17 @@ public class Kotik {
     }
 
     private boolean play() {
-        if(satiety == false ){
+        if(satiety <= 0 ){
             //System.out.println("Котик очень голоден, показатель сытости - " + satiety);
             eat();
             return false;
         }
         weight=weight-2;
+        satiety--;
         return true ;
     }
     private boolean sleep () {
-        if(satiety == false ){
+        if(satiety <= 0 ){
             //System.out.println("Котик очень голоден, показатель сытости - " + satiety);
             eat();
             return false ;
@@ -77,7 +78,7 @@ public class Kotik {
         return true;
     }
     private boolean wash () {
-        if(satiety == false ){
+        if(satiety <= 0 ){
             //System.out.println("Котик очень голоден, показатель сытости - " + satiety);
             eat();
             return false ;
@@ -85,7 +86,7 @@ public class Kotik {
         return true;
     }
     private boolean walk () {
-        if(satiety == false ){
+        if(satiety <= 0 ){
             //System.out.println("Котик очень голоден, показатель сытости - " + satiety);
             eat();
             return  false ;
@@ -93,7 +94,7 @@ public class Kotik {
         return true;
     }
     private boolean hunt () {
-        if(satiety == false ){
+        if(satiety <= 0 ){
             //System.out.println("Котик очень голоден, показатель сытости - " + satiety);
             eat();
             return  false ;
@@ -101,16 +102,16 @@ public class Kotik {
         return true;
     }
 /**/
-    private void eat (boolean satiety ) {
-        this.satiety= true;
+    private void eat (int satiety ) {
+        this.satiety= this.satiety + satiety;
         //System.out.println(" Показатель сытости" + this.satiety);
     }
-    private void eat (boolean satiety, String foodName) {
-        this.satiety= true;
+    private void eat (int satiety, String foodName) {
+        this.satiety= this.satiety + satiety;
        // System.out.println(foodName + " " + satiety);
     }
     private void eat () {
-        this.satiety= true;
+        this.satiety++;
         eat(this.satiety);
         eat( this.satiety, "burg");
     }

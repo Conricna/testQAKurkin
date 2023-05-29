@@ -6,7 +6,7 @@ import java.util.Objects;
 public class Application {
     public static void main(String args[]){
 
-        Kotik cat = new Kotik("cali", "miy",false ,43);
+        Kotik cat = new Kotik("cali", "miy",1 ,43);
         Kotik cat1 = new Kotik();
 
 
