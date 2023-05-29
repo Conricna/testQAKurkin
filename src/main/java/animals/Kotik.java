@@ -60,46 +60,44 @@ public class Kotik {
     }
 
     private boolean play() {
-        if(satiety <= 0 ){
-            //System.out.println("Котик очень голоден, показатель сытости - " + satiety);
-            eat();
-            return false;
+        if(satiety > 0 ){
+            satiety--;
+            return true;
         }
-        weight=weight-2;
-        satiety--;
-        return true ;
+        eat();
+        return false ;
     }
     private boolean sleep () {
-        if(satiety <= 0 ){
-            //System.out.println("Котик очень голоден, показатель сытости - " + satiety);
-            eat();
-            return false ;
+        if(satiety > 0 ){
+            satiety--;
+            return true;
         }
-        return true;
+        eat();
+        return false ;
     }
     private boolean wash () {
-        if(satiety <= 0 ){
-            //System.out.println("Котик очень голоден, показатель сытости - " + satiety);
-            eat();
-            return false ;
+        if(satiety > 0 ){
+            satiety--;
+            return true;
         }
-        return true;
+        eat();
+        return false ;
     }
     private boolean walk () {
-        if(satiety <= 0 ){
-            //System.out.println("Котик очень голоден, показатель сытости - " + satiety);
-            eat();
-            return  false ;
+        if(satiety > 0 ){
+            satiety--;
+            return true;
         }
-        return true;
+        eat();
+        return false ;
     }
     private boolean hunt () {
-        if(satiety <= 0 ){
-            //System.out.println("Котик очень голоден, показатель сытости - " + satiety);
-            eat();
-            return  false ;
+        if(satiety > 0 ){
+            satiety--;
+            return true;
         }
-        return true;
+        eat();
+        return false ;
     }
 /**/
     private void eat (int satiety ) {
