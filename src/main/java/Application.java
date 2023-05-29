@@ -6,7 +6,7 @@ import java.util.Objects;
 public class Application {
     public static void main(String args[]){
 
-        Kotik cat = new Kotik("cali", "miy",0 ,43);
+        Kotik cat = new Kotik("cali", "miy",false ,43);
         Kotik cat1 = new Kotik();
 
 
@@ -17,6 +17,7 @@ public class Application {
         System.out.println(Arrays.toString(cat1.liveAnotherDay()));
     }
     public static boolean compareVoice(String voice1, String voice2){
-        return Objects.equals(voice1, voice2);
+        if (voice1!=voice2) return false;
+        return true;
     }
 }
